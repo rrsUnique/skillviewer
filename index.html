@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>직업별 스킬 보기</title>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+        <style>
+            body {
+                background-color: #1a1a1a;
+                color: #f0f0f0;
+                font-family: 'Noto Sans KR', sans-serif;
+                margin: 0;
+                padding: 30px 20px;
+            }
+
+            h1 {
+                text-align: center;
+                font-size: 28px;
+                margin-bottom: 30px;
+                color: #ff6666;
+            }
+
+            .tabs-scroll {
+                overflow-x: auto;
+                max-width: 100%;
+                margin-bottom: 40px;
+            }
+
+            .tabs-wrapper {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: center;
+                gap: 40px;
+                min-width: max-content;
+            }
+
+            .tab-pair {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .tab-button {
+                background: #2a2a2a;
+                color: #ff6666;
+                border: 1px solid #444;
+                padding: 10px 20px;
+                border-radius: 10px;
+                font-size: 15px;
+                cursor: pointer;
+                transition: background 0.2s ease;
+                white-space: nowrap;
+                text-align: center;
+                min-width: 120px;
+            }
+
+            .tab-button:hover {
+                background: #444;
+            }
+
+            .tab-button.active {
+                background: #ff6666;
+                color: #fff;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin-bottom: 40px;
+            }
+
+            th, td {
+                border: 1px solid #333;
+                padding: 10px;
+                text-align: center;
+                font-size: 14px;
+            }
+
+            th {
+                background-color: #444;
+                font-weight: bold;
+                color: #ffdada;
+            }
+
+            td {
+                background-color: #222;
+            }
+
+            #skillTables {
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+            p.notice {
+                text-align: center;
+                color: #aaa;
+                margin-top: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>직업별 스킬 보기</h1>
+        <div class="tabs-scroll">
+            <div class="tabs-wrapper" id="jobTabs"></div>
+        </div>
+        <div id="skillTables"></div>
+        <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+        <script src="script.js"></script>
+<script>
+    const jobs = [
+        { id: 0, name: "견습기사" },
+        { id: 1, name: "전사" },
+        { id: 2, name: "마법사" },
+        { id: 3, name: "늑대인간" },
+        { id: 4, name: "사제" },
+        { id: 5, name: "타락천사" },
+        { id: 6, name: "도둑" },
+        { id: 7, name: "무도가" },
+        { id: 8, name: "마법창병" },
+        { id: 9, name: "마법궁수" },
+        { id: 10, name: "조련사" },
+        { id: 11, name: "소환사" },
+        { id: 12, name: "공주" },
+        { id: 13, name: "변신소녀" },
+        { id: 14, name: "강신술사" },
+        { id: 15, name: "악마" },
+        { id: 16, name: "영술사" },
+        { id: 17, name: "투사" },
+        { id: 17, name: "광학사" },
+        { id: 17, name: "???" }
+    ];
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const jobTabs = document.getElementById("jobTabs");
+        jobTabs.classList.add("job-tab");
+
+        for (let i = 0; i < jobs.length; i += 2) {
+            const pair = document.createElement("div");
+            pair.className = "tab-pair";
+
+            for (let j = 0; j < 2; j++) {
+                if (jobs[i + j]) {
+                    const btn = document.createElement("button");
+                    btn.className = "tab-button";
+                    btn.textContent = jobs[i + j].name;
+                    btn.dataset.charid = jobs[i + j].id;
+                    pair.appendChild(btn);
+                }
+            }
+
+            jobTabs.appendChild(pair);
+        }
+
+        // 기존 JS 안에 있던 직업탭 클릭 이벤트도 이 시점에 작동
+        const buttons = document.querySelectorAll(".tab-button");
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                buttons.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+                const id = parseInt(btn.dataset.charid);
+                renderByCharactorID(id);
+            });
+        });
+    });
+</script>
+    </body>
+</html>
