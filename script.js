@@ -21,11 +21,11 @@ function generateValues(base, perLevel, scale, max = null) {
     });
 }
 
-function generateRangeValuesWithLevel(base, perLevel, rangeWidth) {
+function generateRangeValuesWithLevel(base, perLevel, rangeWidth, levelSteps) {
     return levelSteps.map((lv, idx) => {
         const min = base + perLevel * idx;
         const max = min + rangeWidth;
-        return `${min}\u00A0~\u00A0${max}`;  // 한 줄 고정용 공백
+        return `${min} ~ ${max}`;  // 일반 공백 사용
     });
 }
 
@@ -54,8 +54,7 @@ const skillTableConfig = {
                 { label: "데미지", baseIndex: 137, perLevelIndex: 138, scale: 100 },
                 { label: "사정거리", baseIndex: 426, scale: 100 },
                 { label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
-                { label: "타격 횟수", text: "1", valueType: "text" },
-                { label: "추가 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199 }
+                { label: "물리 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199 }
             ]
         },
         {
@@ -126,6 +125,19 @@ const skillTableConfig = {
            ]
         },
         {
+            skillName: "ライトニングサンダー",
+            displayName: "라이트닝 썬더",
+            iconId: 64,
+            rows: [
+                { label: "필요 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "소비 CP", baseIndex: 237, perLevelIndex: 238, scale: 100 },
+                { label: "바람 데미지", baseIndex: 157, perLevelIndex: 158, scale: 100 },
+                { label: "빛 데미지", baseIndex: 171, perLevelIndex: 172, scale: 100 },
+                { label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
+                { label: "비고", text: "온/오프 스킬", valueType: "text" },
+           ]
+        },
+        {
             skillName: "クリティカルヒット",
             displayName: "크리티컬 힛",
             iconId: 75,
@@ -133,8 +145,7 @@ const skillTableConfig = {
                 { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
                 { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
                 { label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
-                { label: "타격 횟수", text: "1", valueType: "text" },
-                { label: "추가 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199 }
+                { label: "물리 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199 }
             ]
         },
         {
@@ -144,7 +155,7 @@ const skillTableConfig = {
             rows: [
                 { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
                 { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
-                { label: "불속성 추가 데미지", baseIndex: 193, perLevelIndex: 194, scale: 100 },
+                { label: "불 속성 추가 데미지", baseIndex: 193, perLevelIndex: 194, scale: 100 },
                 { label: "지속시간", baseIndex: 191, perLevelIndex: 192, scale: 100 },
                 { label: "사정거리", baseIndex: 419, scale: 100 },
             ]
@@ -186,6 +197,237 @@ const skillTableConfig = {
                 { label: "지속시간", baseIndex: 191, perLevelIndex: 192, scale: 100 },
                 { label: "사정거리", baseIndex: 419, scale: 100 },
             ]
+        },
+    ],
+    3: [
+        {
+            skillName: "グランドクロー",
+            displayName: "그랜드 클로",
+            iconId: 79,
+            rows: [
+                { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "데미지", baseIndex: 137, perLevelIndex: 138, scale: 100 },
+                { label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
+                { label: "타격 횟수", text: "1", valueType: "text" },
+           ]
+        },
+        {
+            skillName: "チェーンドクロー",
+            displayName: "체인드 클로",
+            iconId: 80,
+            rows: [
+                { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "데미지", baseIndex: 137, perLevelIndex: 138, scale: 100 },
+                { label: "타격 횟수", baseIndex: 495, perLevelIndex: 496, scale: 100, maxIndex: 494, maxScale: false },
+                { label: "추가 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199 },
+                { label: "비고", text: "즉시 타격", valueType: "text" },
+           ]
+        },
+        {
+            skillName: "バーニングオーブ",
+            displayName: "버닝 오브",
+            iconId: 88,
+            rows: [
+                { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "불 데미지", baseIndex: 143, perLevelIndex: 144, rangeWidthIndex: 145, valueType: "rangeText", scale: 100 },
+                { label: "사정거리", baseIndex: 419, scale: 100 },
+                { label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
+                { label: "불 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199 }
+           ]
+        },
+        {
+            skillName: "ハウリングブラスト",
+            displayName: "하울링 블래스트",
+            iconId: 95,
+            rows: [
+                { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "불 데미지", baseIndex: 143, perLevelIndex: 144, rangeWidthIndex: 145, valueType: "rangeText", scale: 100 },
+                { label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
+                { label: "불 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199 }
+           ]
+        },
+    ],
+   4: [
+        {
+            skillName: "ゴッドハンド",
+            displayName: "가즈 핸드",
+            iconId: 104,
+            rows: [
+                { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 1000 },
+                { label: "데미지", baseIndex: 137, perLevelIndex: 138, scale: 100 },
+                { label: "빛 데미지", baseIndex: 171, perLevelIndex: 172, rangeWidthIndex: 173, valueType: "rangeText", scale: 100 },
+                { label: "언데드·악마 치명타 확률", baseIndex: 440, scale: 100 },
+                { label: "타격 범위", baseIndex: 426, scale: 100 },
+                { label: "물리 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199 },
+                { label: "빛 타격 횟수", baseIndex: 219, perLevelIndex: 220, scale: 100, maxIndex: 221 }
+           ]
+        },
+        {
+            skillName: "ブレッシング",
+            displayName: "축복",
+            iconId: 117,
+            rows: [
+                { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "최대 HP 증가율", baseIndex: 215, perLevelIndex: 216, scale: 100 },
+                { label: "이상계 저항 증가율", baseIndex: 193, perLevelIndex: 194, scale: 100 },
+                { label: "빛 속성 추가 데미지", baseIndex: 237, perLevelIndex: 238, rangeWidthIndex: 239, valueType: "rangeText", scale: 100 },
+                { label: "지속시간", baseIndex: 502, perLevelIndex: 503, scale: 100 },
+                { label: "사정거리", baseIndex: 419, scale: 100 },
+           ]
+        },
+        {
+            skillName: "プロテクティングエビル",
+            displayName: "프로텍팅 이블",
+            iconId: 118,
+            rows: [
+                { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "방어력 상승률", baseIndex: 193, perLevelIndex: 194, scale: 100 },
+                { label: "저하계 저항 증가율", baseIndex: 215, perLevelIndex: 216, scale: 100 },
+                { label: "지속시간", baseIndex: 502, perLevelIndex: 503, scale: 100 },
+                { label: "사정거리", baseIndex: 419, scale: 100 },
+           ]
+        },
+        {
+            skillName: "プロテクティングエレメンタル",
+            displayName: "프로텍팅 엘레멘탈",
+            iconId: 118,
+            rows: [
+                { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "효과 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
+                { label: "순수 마법 공격 증가율", baseIndex: 281, perLevelIndex: 282, maxIndex: 283, scale: 100 },
+                { label: "이상계 저항 증가율", baseIndex: 193, scale: 100 },
+                { label: "저하계 저항 증가율", baseIndex: 215, scale: 100 },
+                { label: "저주계 저항 증가율", baseIndex: 237, scale: 100 }
+           ]
+        },
+        {
+            skillName: "ディバインアーチ",
+            displayName: "디바인 아치",
+            iconId: 121,
+            rows: [
+                { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "효과 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
+                { label: "스킬 레벨 증가", baseIndex: 281, perLevelIndex: 282, maxIndex: 283, scale: 100 },
+                { label: "이상계 저항 증가율", baseIndex: 193, scale: 100 },
+                { label: "저하계 저항 증가율", baseIndex: 215, scale: 100 },
+                { label: "저주계 저항 증가율", baseIndex: 237, scale: 100 }
+           ]
+        },
+    ],
+    7: [
+        {
+            skillName: "かかと落とし",
+            displayName: "힘껏찍기",
+            iconId: 184,
+            rows: [
+                { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "데미지", baseIndex: 137, perLevelIndex: 138, scale: 100 },
+                { label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
+                { label: "타격 횟수", text: "1", valueType: "text" },
+                { label: "스킬 레벨 상승", text: "오른발 스킬 레벨 2 상승 (3초)", valueType: "text" },
+           ]
+        },
+        {
+            skillName: "後回し蹴り",
+            displayName: "뒤돌려 차기",
+            iconId: 185,
+            rows: [
+                { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "데미지", baseIndex: 137, perLevelIndex: 138, scale: 100 },
+                { label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
+                { label: "타격 횟수", text: "1", valueType: "text" },
+                { label: "스킬 레벨 상승", text: "왼손 스킬 레벨 3 상승 (3초)", valueType: "text" },
+           ]
+        },
+        {
+            skillName: "飛び蹴り",
+            displayName: "날아 찍기",
+            iconId: 186,
+            rows: [
+                { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "데미지", baseIndex: 137, perLevelIndex: 138, scale: 100 },
+                { label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
+                { label: "사정거리", baseIndex: 419, scale: 100 },
+                { label: "타격 횟수", text: "1", valueType: "text" },
+                { label: "오른발 스킬 레벨 상승", baseIndex: 193, perLevelIndex: 194, scale: 100 },         
+           ]
+        },
+        {
+            skillName: "三連回し蹴り",
+            displayName: "삼단 돌려차기",
+            iconId: 187,            rows: [
+                { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "데미지", baseIndex: 137, perLevelIndex: 138, scale: 100 },            
+                { label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
+                { label: "사정거리", baseIndex: 426, scale: 100 },        
+                { label: "물리 타격 횟수", baseIndex: 241, perLevelIndex: 242, scale: 100, maxIndex: 243 },
+                { label: "스킬 레벨 상승", text: "오른손 스킬 레벨 4 상승 (2초)", valueType: "text" }
+           ]
+        },
+        {
+            skillName: "烈風撃",
+            displayName: "장풍",
+            iconId: 200,            rows: [
+                { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "데미지", baseIndex: 137, perLevelIndex: 138, scale: 100 },  
+                { label: "바람 데미지", baseIndex: 157, perLevelIndex: 158, rangeWidthIndex: 159, valueType: "rangeText", scale: 100 },
+                { label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },   
+                { label: "물리 타격 횟수", baseIndex: 241, perLevelIndex: 242, scale: 100, maxIndex: 243 },
+                { label: "바람 타격 횟수", baseIndex: 219, perLevelIndex: 220, scale: 100, maxIndex: 221 },
+           ]
+        },
+    ],
+    14: [
+        {
+            skillName: "催眠術",
+            displayName: "수면",
+            iconId: 352,
+            rows: [
+                { label: "필요 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "대지 데미지", baseIndex: 113, perLevelIndex: 114, rangeWidthIndex: 115, valueType: "rangeText", scale: 100, },
+                { label: "사정 거리", baseIndex: 419, scale: 100 },
+                { label: "비고", text: "온/오프 스킬", valueType: "text" },
+           ]
+        },
+        {
+            skillName: "針のむしろ",
+            displayName: "자책감",
+            iconId: 367,
+            rows: [
+                { label: "필요 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "어둠 데미지", baseIndex: 178, scale: 100 },
+                { label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },   
+                { label: "적 공격속도 증가", baseIndex: 215, perLevelIndex: 216, scale: 100 },   
+                { label: "적 이동속도 증가", baseIndex: 237, perLevelIndex: 238, scale: 100 },
+                { label: "비고", text: "자기 중심으로 공격", valueType: "text" },
+           ]
+        },
+        {
+            skillName: "ミラーカーズ",
+            displayName: "고문",
+            iconId: 368,
+            rows: [
+                { label: "필요 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "어둠 데미지", baseIndex: 178, scale: 100 },
+                { label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },   
+                { label: "적 공격속도 증가", baseIndex: 215, perLevelIndex: 216, scale: 100 },   
+                { label: "적 이동속도 증가", baseIndex: 237, perLevelIndex: 238, scale: 100 },
+                { label: "비고", text: "자기 중심으로 공격", valueType: "text" },
+           ]
         },
     ]
 };
@@ -276,6 +518,10 @@ function renderByCharactorID(charactorID) {
     });
 }
 
+function cleanNumber(n) {
+    return parseFloat(parseFloat(n).toFixed(10)).toString();
+}
+
 function renderSkillTable(titleName, rows, iconId = null) {
     const container = document.getElementById("skillTables");
     const table = document.createElement("table");
@@ -344,14 +590,34 @@ function renderSkillTable(titleName, rows, iconId = null) {
                     if (row.valueType !== "text") {
                         if (Number(row.baseIndex) === 426) {
                             text = `무기 사정거리 x ${text}m`;
-                        } else if (baseIndex === 137 || (baseIndex === 193 && row.label.includes("회피율")) || (baseIndex === 215 && row.label.includes("방어력%")) || (baseIndex === 215 && row.label.includes("이동속도 증가")) || (baseIndex === 193 && row.label.includes("공격속도 증가"))) {
+                        } else if (
+                            baseIndex === 137 ||
+                            (baseIndex === 193 && row.label.includes("회피율")) ||
+                            (baseIndex === 193 && row.label.includes("이상계 저항 증가율")) ||
+                            (baseIndex === 193 && row.label.includes("방어력 상승률")) ||
+                            (baseIndex === 215 && row.label.includes("방어력%")) ||
+                            (baseIndex === 215 && row.label.includes("이동속도 증가")) ||
+                            (baseIndex === 193 && row.label.includes("공격속도 증가")) ||
+                            (baseIndex === 193 && row.label.includes("마비 저항")) ||
+                            (baseIndex === 237 && row.label.includes("적 이동속도 증가")) ||
+                            (baseIndex === 237 && row.label.includes("저주계 저항 증가율")) ||
+                            (baseIndex === 281 && row.label.includes("순수 마법 공격 증가율")) ||
+                            baseIndex === 215 ||
+                            baseIndex === 440 
+                        ) {
                             text = `${parseFloat(text)}%`;
-                        } else if (Number(row.baseIndex) === 109) { 
+                        } else if (Number(row.baseIndex) === 109) {
                             text = `초당 ${text}회`;
-                        } else if (Number(row.baseIndex) === 191 || baseIndex === 502) { 
+                        } else if (Number(row.baseIndex) === 191 || baseIndex === 502) {
                             text = `${text}초`;
                         } else if (baseIndex === 424 || baseIndex === 419) {
                             text = `${text}m`;
+                        } else if (
+                            (baseIndex === 241 && row.label.includes("물리 타격 횟수")) ||
+                            (baseIndex === 197 && (row.label.includes("물리 타격 횟수") || row.label.includes("불 타격 횟수")))
+                        ) {
+                            const raw = parseFloat(text) + 1;
+                            text = cleanNumber(raw);
                         }
                     }
                     td.textContent = text;
@@ -383,3 +649,4 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(err => console.error("CSV 로드 실패:", err));
 });
+
