@@ -477,8 +477,8 @@ const skillTableConfig = {
                 { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
                 { label: "데미지", baseIndex: 137, perLevelIndex: 138, scale: 100 },
                 { label: "사정 거리", baseIndex: 419, scale: 100 },
-                { label: "물리 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199 }
-                { label: "비고", text: "360도 전방향 타격", valueType: "text" },
+                { label: "물리 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199 },
+                { label: "비고", text: "360도 전방향 타격", valueType: "text" }
             ]
         },
     ],
