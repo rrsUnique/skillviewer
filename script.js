@@ -459,7 +459,7 @@ const skillTableConfig = {
             displayName: "신념",
             iconId: 250,
             rows: [
-                { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "필요 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
                 { label: "공격력 상승률", baseIndex: 193, perLevelIndex: 194, scale: 100 },
                 { label: "마법 공격 증가율", baseIndex: 215, perLevelIndex: 216, maxIndex: 217, scale: 100 },
                 { label: "지속시간", baseIndex: 191, perLevelIndex: 192, scale: 100 },
@@ -480,6 +480,115 @@ const skillTableConfig = {
                 { label: "물리 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199 },
                 { label: "비고", text: "360도 전방향 타격", valueType: "text" }
             ]
+        },
+    ],
+   10: [
+        {
+            skillIndex: 268,
+            displayName: "꾸짖기",
+            iconId: 269,
+            rows: [
+                { label: "필요 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "펫 마법 공격 증가율", baseIndex: 281, perLevelIndex: 282, scale: 100 },
+                { label: "마법 저항 증가량", baseIndex: 259, perLevelIndex: 260, scale: 100 },
+                { label: "이상계 저항 증가율", baseIndex: 193, perLevelIndex: 194, scale: 100 },
+                { label: "저하계 저항 증가율", baseIndex: 215, perLevelIndex: 216, scale: 100 },
+                { label: "저주계 저항 증가율", baseIndex: 237, scale: 100 },
+                { label: "갱신시간", baseIndex: 109, scale: 100 },
+                { label: "지속시간", baseIndex: 191, perLevelIndex: 192, scale: 100 },
+                { label: "효과 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
+                { label: "비고", text: "모든 타입의 펫에게 적용", valueType: "text" },
+                { label: "비고", text: "온/오프 스킬", valueType: "text" }
+           ]
+        },
+        {
+            skillIndex: 269,
+            displayName: "고추 먹이기",
+            iconId: 270,
+            rows: [
+                { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "펫 능력치 상승률", baseIndex: 193, perLevelIndex: 194, scale: 100 },
+                { label: "지속 시간", baseIndex: 191, perLevelIndex: 192, scale: 100 },
+                { label: "사용 횟수", baseIndex: 195, perLevelIndex: 196, maxIndex:197, scale: 100 }
+            ]
+        },
+        {
+            skillIndex: 270,
+            displayName: "우울한 날",
+            iconId: 271,
+            rows: [
+                { label: "필요 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "펫 대지 공격력 증가", baseIndex: 193, perLevelIndex: 194, scale: 100 },
+                { label: "펫 물리 공격력 증가량", baseIndex: 215, perLevelIndex: 216, scale: 100, combineWith: { baseIndex: 237, perLevelIndex: 238, scale: 100 }, combineBaseIndex: 237 },
+                { label: "갱신시간", baseIndex: 109, scale: 100 },
+                { label: "지속시간", baseIndex: 191, perLevelIndex: 192, scale: 100 },
+                { label: "효과 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
+                { label: "비고", text: "모든 타입의 펫에게 적용", valueType: "text" },
+                { label: "비고", text: "온/오프 스킬", valueType: "text" }
+           ]
+        },
+        {
+            skillIndex: 271,
+            displayName: "안개 낀 아침",
+            iconId: 272,
+            rows: [
+                { label: "필요 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "펫 물 공격력 증가", baseIndex: 193, perLevelIndex: 194, scale: 100 },
+                { label: "펫 명중률 증가량", baseIndex: 215, perLevelIndex: 216, scale: 100 },
+                { label: "펫 회피율 증가량", baseIndex: 237, perLevelIndex: 238, scale: 100 },
+                { label: "갱신시간", baseIndex: 109, scale: 100 },
+                { label: "지속시간", baseIndex: 191, perLevelIndex: 192, scale: 100 },
+                { label: "효과 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
+                { label: "비고", text: "모든 타입의 펫에게 적용", valueType: "text" },
+                { label: "비고", text: "온/오프 스킬", valueType: "text" }
+           ]
+        },
+        {
+            skillIndex: 272,
+            displayName: "비바람 부는 날",
+            iconId: 273,
+            rows: [
+                { label: "필요 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "펫 바람 공격력 증가", baseIndex: 193, perLevelIndex: 194, scale: 100 },
+                { label: "펫 방어력 증가량", baseIndex: 215, perLevelIndex: 216, scale: 100 },
+                { label: "펫 공격속도 증가량", baseIndex: 237, perLevelIndex: 238, scale: 100 },
+                { label: "갱신시간", baseIndex: 109, scale: 100 },
+                { label: "지속시간", baseIndex: 191, perLevelIndex: 192, scale: 100 },
+                { label: "효과 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
+                { label: "비고", text: "모든 타입의 펫에게 적용", valueType: "text" },
+                { label: "비고", text: "온/오프 스킬", valueType: "text" }
+           ]
+        },
+        {
+            skillIndex: 273,
+            displayName: "화창한 하루",
+            iconId: 274,
+            rows: [
+                { label: "필요 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "펫 불 공격력 증가", baseIndex: 193, perLevelIndex: 194, scale: 100 },
+                { label: "펫 체력 증가량", baseIndex: 215, perLevelIndex: 216, scale: 100, combineWith: { baseIndex: 237, perLevelIndex: 238, scale: 100 }, combineBaseIndex: 237 },
+                { label: "갱신시간", baseIndex: 109, scale: 100 },
+                { label: "지속시간", baseIndex: 191, perLevelIndex: 192, scale: 100 },
+                { label: "효과 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
+                { label: "비고", text: "모든 타입의 펫에게 적용", valueType: "text" },
+                { label: "비고", text: "온/오프 스킬", valueType: "text" }
+           ]
+        },
+        {
+            skillIndex: 274,
+            displayName: "변덕스러운 날",
+            iconId: 275,
+            rows: [
+                { label: "필요 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "펫 어둠 공격력 증가", baseIndex: 193, perLevelIndex: 194, scale: 100 },
+                { label: "펫 마법 저항 증가량", baseIndex: 215, perLevelIndex: 216, scale: 100, combineWith: { baseIndex: 237, perLevelIndex: 238, scale: 100 }, combineBaseIndex: 237 },
+                { label: "갱신시간", baseIndex: 109, scale: 100 },
+                { label: "지속시간", baseIndex: 191, perLevelIndex: 192, scale: 100 },
+                { label: "효과 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
+                { label: "비고", text: "모든 타입의 펫에게 적용", valueType: "text" },
+                { label: "비고", text: "온/오프 스킬", valueType: "text" }
+           ]
         },
     ],
     14: [
@@ -568,6 +677,22 @@ function renderByCharactorID(charactorID) {
     const { headerIndexMap, data } = skillCSVData;
     const container = document.getElementById("skillTables");
     container.innerHTML = "";
+
+// 안내 텍스트 표시
+const infoText = document.getElementById("info-text");
+const jobTextMap = {
+    2: "불, 물, 바람, 대지, 빛, 어둠 속성 통합",
+    4: "리액션 최대 4개까지 가능",
+    7: "리액션 최대 4개까지 가능",
+    10: "리액션 최대 4개까지 가능",
+};
+
+if (jobTextMap.hasOwnProperty(charactorID)) {
+    infoText.textContent = jobTextMap[charactorID];
+    infoText.style.display = "block";
+} else {
+    infoText.style.display = "none";
+}
 
     const rowsByID = data.filter(row => row[headerIndexMap["charactorID"]]?.trim() === String(charactorID));
     const config = skillTableConfig[charactorID];
@@ -739,17 +864,22 @@ console.log("▶ 확인용 baseIndex", baseIndex, row.label, text);
                             (baseIndex === 193 && row.label.includes("회피율")) ||
                             (baseIndex === 193 && row.label.includes("이상계 저항 증가율")) ||
                             (baseIndex === 193 && row.label.includes("방어력 상승률")) ||
+                            (baseIndex === 193 && row.label.includes("공격력 증가")) ||
                             (baseIndex === 215 && row.label.includes("방어력%")) ||
                             (baseIndex === 215 && row.label.includes("이동속도 증가")) ||
+                            (baseIndex === 237 && row.label.includes("증가량")) ||
                             (baseIndex === 193 && row.label.includes("공격속도 증가")) ||
                             (baseIndex === 193 && row.label.includes("마비 저항")) ||
                             (baseIndex === 193 && row.label.includes("공격력 상승률")) ||
+                            (baseIndex === 193 && row.label.includes("펫 능력치 상승률")) ||
                             (baseIndex === 237 && row.label.includes("적 이동속도 증가")) ||
                             (baseIndex === 237 && row.label.includes("저주계 저항 증가율")) ||
                             (baseIndex === 281 && row.label.includes("마법 공격 증가율")) ||
+                            (baseIndex === 259 && row.label.includes("마법 저항 증가량")) ||
                             baseIndex === 215 || baseIndex === 440 || baseIndex === 428 || baseIndex === 417
                         ) text = `${parseFloat(text)}%`;
-                        else if (baseIndex === 109) text = `초당 ${text}회`;
+                        else if (baseIndex === 109 && row.label.includes("타격 횟수")) text = `초당 ${text}회`;
+                        else if (baseIndex === 109) text = `${text}초`;
                         else if (baseIndex === 191 || baseIndex === 502) text = `${text}초`;
                         else if (baseIndex === 424 || baseIndex === 419) text = `${text}m`;
                         else if (
