@@ -1104,6 +1104,7 @@ console.log("▶ 확인용 baseIndex", baseIndex, row.label, text);
                             (baseIndex === 193 && row.label.includes("공격력 증가")) ||
                             (baseIndex === 215 && row.label.includes("방어력%")) ||
                             (baseIndex === 215 && row.label.includes("이동속도 증가")) ||
+                            (baseIndex === 215 && row.label.includes("저하계 저항 증가율")) ||
                             (baseIndex === 237 && row.label.includes("증가량")) ||
                             (baseIndex === 193 && row.label.includes("공격속도 증가")) ||
                             (baseIndex === 193 && row.label.includes("마비 저항")) ||
@@ -1114,6 +1115,7 @@ console.log("▶ 확인용 baseIndex", baseIndex, row.label, text);
                             (baseIndex === 281 || baseIndex === 215) && row.label.includes("마법 공격 증가율") ||
                             (baseIndex === 259 && row.label.includes("마법 저항 증가량")) ||
                             (baseIndex === 436 && row.label.includes("치명타 발동 확율")) ||
+                            (baseIndex === 416 && row.label.includes("공격속도 증가")) ||
                             baseIndex === 440 || baseIndex === 428 || baseIndex === 417
                         ) text = `${parseFloat(text)}%`;
                         else if ((baseIndex === 109 || baseIndex === 521) && row.label.includes("타격 횟수")) text = `초당 ${text}회`;
