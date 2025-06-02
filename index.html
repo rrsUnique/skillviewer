@@ -97,10 +97,24 @@
                 color: #aaa;
                 margin-top: 40px;
             }
+
+            #update-date {
+                position: fixed;
+                top: 10px;
+                right: 20px;
+                font-size: 10px;
+                color: #aaa;
+                background-color: #1a1a1a;
+                padding: 3px 6px;
+                border-radius: 4px;
+                z-index: 9999;
+            }
+
         </style>
     </head>
     <body>
-        <h1>직업별 스킬 보기</h1>
+        <h1>RRS 비공식 스킬 뷰어</h1>
+        <div id="update-date">skill.csv 갱신 : 25-05-24</div>
         <div class="tabs-scroll">
             <div class="tabs-wrapper" id="jobTabs"></div>
         </div>
@@ -128,8 +142,8 @@
         { id: 15, name: "악마" },
         { id: 16, name: "영술사" },
         { id: 17, name: "투사" },
-        { id: 17, name: "광학사" },
-        { id: 17, name: "???" }
+        { id: 18, name: "광학사" },
+        { id: 19, name: "???" }
     ];
 
     document.addEventListener("DOMContentLoaded", () => {
