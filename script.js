@@ -808,7 +808,7 @@ const skillTableConfig = {
                 { label: "소비 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
                 { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
                 { label: "빛 속성 추가 데미지", baseIndex: 193, perLevelIndex: 194, scale: 100 },
-                { label: "마법 치명타 발동 확률", baseIndex: 215, perLevelIndex: 216, scale: 100 },
+                { label: "?", baseIndex: 215, perLevelIndex: 216, scale: 100 },
                 { label: "지속시간", baseIndex: 191, perLevelIndex: 192, scale: 100 },
                 { label: "사정거리", baseIndex: 419, scale: 100 },
            ]
