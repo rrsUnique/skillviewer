@@ -489,11 +489,12 @@ const skillTableConfig = {
             iconId: 269,
             rows: [
                 { label: "필요 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 경험치 증가율", baseIndex: 193, perLevelIndex: 194, scale: 100 },
                 { label: "펫 마법 공격 증가율", baseIndex: 281, perLevelIndex: 282, scale: 100 },
-                { label: "마법 저항 증가량", baseIndex: 259, perLevelIndex: 260, scale: 100 },
-                { label: "이상계 저항 증가율", baseIndex: 193, perLevelIndex: 194, scale: 100 },
-                { label: "저하계 저항 증가율", baseIndex: 215, perLevelIndex: 216, scale: 100 },
-                { label: "저주계 저항 증가율", baseIndex: 237, scale: 100 },
+                { label: "마법 저항 증가량", baseIndex: 303, perLevelIndex: 304, maxIndex: 305, scale: 100 },
+                { label: "이상계 저항 증가율", baseIndex: 215, perLevelIndex: 216, scale: 100 },
+                { label: "저하계 저항 증가율", baseIndex: 236, perLevelIndex: 237, scale: 100 },
+                { label: "저주계 저항 증가율", baseIndex: 258, perLevelIndex: 259, scale: 100 },
                 { label: "갱신시간", baseIndex: 109, scale: 100 },
                 { label: "지속시간", baseIndex: 191, perLevelIndex: 192, scale: 100 },
                 { label: "효과 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000 },
@@ -1095,48 +1096,56 @@ function renderSkillTable(titleName, rows, iconId = null) {
                     const baseIndex = Number("combineBaseIndex" in row ? row.combineBaseIndex : row.baseIndex);
 console.log("▶ 확인용 baseIndex", baseIndex, row.label, text);
                     if (row.valueType !== "text") {
-                        if (baseIndex === 426) text = `무기 사정거리 x ${text}m`;
-                        else if (
-                            baseIndex === 137 ||
-                            (baseIndex === 193 && row.label.includes("회피율")) ||
-                            (baseIndex === 193 && row.label.includes("이상계 저항 증가율")) ||
-                            (baseIndex === 193 && row.label.includes("방어력 상승률")) ||
-                            (baseIndex === 193 && row.label.includes("공격력 증가")) ||
-                            (baseIndex === 215 && row.label.includes("방어력%")) ||
-                            (baseIndex === 215 && row.label.includes("이동속도 증가")) ||
-                            (baseIndex === 215 && row.label.includes("저하계 저항 증가율")) ||
-                            (baseIndex === 237 && row.label.includes("증가량")) ||
-                            (baseIndex === 193 && row.label.includes("공격속도 증가")) ||
-                            (baseIndex === 193 && row.label.includes("마비 저항")) ||
-                            (baseIndex === 193 && row.label.includes("공격력 상승률")) ||
-                            (baseIndex === 193 && row.label.includes("펫 능력치 상승률")) ||
-                            (baseIndex === 237 && row.label.includes("적 이동속도 증가")) ||
-                            (baseIndex === 237 && row.label.includes("저주계 저항 증가율")) ||
-                            (baseIndex === 281 || baseIndex === 215) && row.label.includes("마법 공격 증가율") ||
-                            (baseIndex === 259 && row.label.includes("마법 저항 증가량")) ||
-                            (baseIndex === 436 && row.label.includes("치명타 발동 확율")) ||
-                            (baseIndex === 416 && row.label.includes("공격속도 증가")) ||
-                            baseIndex === 440 || baseIndex === 428 || baseIndex === 417
-                        ) text = `${parseFloat(text)}%`;
-                        else if ((baseIndex === 109 || baseIndex === 521) && row.label.includes("타격 횟수")) text = `초당 ${text}회`;
-                        else if (baseIndex === 109) text = `${text}초`;
-                        else if (baseIndex === 191 || baseIndex === 502) text = `${text}초`;
-                        else if (baseIndex === 424 || baseIndex === 419) text = `${text}m`;
-                        else if (
+                        if (baseIndex === 426) {
+                            text = `무기 사정거리 x ${text}m`;
+                        } else if (
+                            row.label.includes("회피율") ||
+                            row.label.includes("이상계 저항 증가율") ||
+                            row.label.includes("방어력 상승률") ||
+                            row.label.includes("공격력 증가") ||
+                            row.label.includes("방어력%") ||
+                            row.label.includes("이동속도 증가") ||
+                            row.label.includes("저하계 저항 증가율") ||
+                            row.label.includes("증가량") ||
+                            row.label.includes("공격속도 증가") ||
+                            row.label.includes("마비 저항") ||
+                            row.label.includes("공격력 상승률") ||
+                            row.label.includes("펫 능력치 상승률") ||
+                            row.label.includes("적 이동속도 증가") ||
+                            row.label.includes("저주계 저항 증가율") ||
+                            row.label.includes("마법 공격 증가율") ||
+                            row.label.includes("마법 저항 증가량") ||
+                            row.label.includes("치명타 발동 확율") ||
+                            row.label.includes("획득 경험치 증가율") ||
+                            row.label.includes("데미지") ||
+                            row.label.includes("명중률")
+                        ) {
+                            text = `${parseFloat(text)}%`;
+                        } else if ((baseIndex === 109 || baseIndex === 521) && row.label.includes("타격 횟수")) {
+                            text = `초당 ${text}회`;
+                        } else if (baseIndex === 109) {
+                            text = `${text}초`;
+                        } else if (baseIndex === 191 || baseIndex === 502) {
+                            text = `${text}초`;
+                        } else if (baseIndex === 424 || baseIndex === 419) {
+                            text = `${text}m`;
+                        } else if (
                             (baseIndex === 241 && row.label.includes("물리 타격 횟수")) ||
                             (baseIndex === 197 && (
                                 row.label.includes("물리 타격 횟수") ||
                                 row.label.includes("불 타격 횟수") ||
                                 row.label.includes("빛 타격 횟수")
                             )) ||
-                            (baseIndex === 219 && row.label.includes("불 타격 횟수") || row.label.includes("물리 타격 횟수")) ||
+                            (baseIndex === 219 && (
+                                row.label.includes("불 타격 횟수") || 
+                                row.label.includes("물리 타격 횟수")
+                            )) ||
                             (baseIndex === 495 && row.label.includes("물리 타격 횟수")) ||
-                            (
-                                (baseIndex === 241 || baseIndex === 263) &&
-                                row.label.includes("타격 횟수")
-                            )
-                        ) text = cleanNumber(parseFloat(text) + 1);
-                     }
+                            ((baseIndex === 241 || baseIndex === 263) && row.label.includes("타격 횟수"))
+                        ) {
+                            text = cleanNumber(parseFloat(text) + 1);
+                        }
+                    }
                     td.textContent = text;
                     td.colSpan = span;
                     td.style.border = "1px solid #333";
