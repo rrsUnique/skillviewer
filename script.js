@@ -1117,7 +1117,8 @@ console.log("▶ 확인용 baseIndex", baseIndex, row.label, text);
                             row.label.includes("마법 저항 증가량") ||
                             row.label.includes("치명타 발동 확율") ||
                             row.label.includes("획득 경험치 증가율") ||
-                            row.label.includes("데미지") ||
+                            row.label === "데미지" ||
+                            row.label === "최대 HP 증가율" ||
                             row.label.includes("명중률")
                         ) {
                             text = `${parseFloat(text)}%`;
