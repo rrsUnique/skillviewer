@@ -62,8 +62,7 @@ const skillTableConfig = {
                 { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
                 { label: "데미지", baseIndex: 137, perLevelIndex: 138, scale: 100, unit: "%" },
                 { label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m" },
-                { label: "타격 횟수", baseIndex: 495, perLevelIndex: 496, scale: 100, maxIndex: 494, maxScale: false },
-                { label: "추가 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199 }
+                { label: "타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199, offset: 1 }
             ]
         },
         {
@@ -650,8 +649,8 @@ const skillTableConfig = {
             rows: [
                 { label: "필요 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
                 { label: "획득 경험치 증가율", baseIndex: 193, perLevelIndex: 194, scale: 100, unit: "%" },
-                { label: "펫 마법 공격 증가율", baseIndex: 281, perLevelIndex: 282, scale: 100, unit: "%" },
-                { label: "마법 저항 증가량", baseIndex: 303, perLevelIndex: 304, maxIndex: 305, scale: 100, unit: "%" },
+                { label: "펫 마법 공격 증가율", baseIndex: 303, perLevelIndex: 304, maxIndex: 305, scale: 100, unit: "%" },
+                { label: "마법 저항 증가량", baseIndex: 281, perLevelIndex: 282, scale: 100, unit: "%" },
                 { label: "이상계 저항 증가율", baseIndex: 215, perLevelIndex: 216, scale: 100, unit: "%" },
                 { label: "저하계 저항 증가율", baseIndex: 236, perLevelIndex: 237, scale: 100, unit: "%" },
                 { label: "저주계 저항 증가율", baseIndex: 258, perLevelIndex: 259, scale: 100, unit: "%" },
