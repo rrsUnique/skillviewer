@@ -286,12 +286,12 @@ const skillTableConfig = {
             displayName: "바운싱 리니어",
             iconId: 89,
             rows: [
-                { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100, color: "#502828" },
-                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100, color: "#502828" },
-                { label: "데미지", baseIndex: 137, perLevelIndex: 138, scale: 100, unit: "%", color: "#502828" },
-                { label: "바운싱 거리", baseIndex: 419, scale: 100, unit: "m", color: "#502828" },
-                { label: "타격 횟수", baseIndex: 495, perLevelIndex: 496, scale: 100, maxIndex: 494, maxScale: false , color: "#502828" },
-                { label: "추가 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199, offset: 1, color: "#502828" }
+                { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "데미지", baseIndex: 137, perLevelIndex: 138, scale: 100, unit: "%" },
+                { label: "바운싱 거리", baseIndex: 419, scale: 100, unit: "m" },
+                { label: "타격 횟수", baseIndex: 495, perLevelIndex: 496, scale: 100, maxIndex: 494, maxScale: false  },
+                { label: "추가 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199, offset: 1 }
            ]
         },
         {
@@ -756,7 +756,24 @@ const skillTableConfig = {
             rows: [
                 { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
                 { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
-
+                { label: "기존 반려동물 공격력, 방어력 상승", baseIndex: 193, perLevelIndex: 194, scale: 100, maxScale: 195, csv:2, color: "#502828" },
+				{ label: "변경 반려동물 공격력, 방어력 상승", baseIndex: 193, perLevelIndex: 194, scale: 100, maxScale: 195, color: "#2F5C8A" },
+				{ label: "지속시간", baseIndex: 502,perLevelIndex: 503, scale: 100, unit: "초" },
+				{ label: "비고", text: "상승 최대 300", valueType: "text", color: "#2F5C8A" }
+           ]
+        },
+		{
+            skillIndex: 263,
+            displayName: "칭찬하기",
+            iconId: 264,
+			isNew: true,
+            rows: [
+                { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "기존 반려동물 레벨 상승량", baseIndex: 193, perLevelIndex: 194, scale: 100, maxScale: 195, csv:2, color: "#502828" },
+				{ label: "변경 반려동물 레벨 상승량", baseIndex: 193, perLevelIndex: 194, scale: 100, maxScale: 195, color: "#2F5C8A" },
+				{ label: "지속시간", baseIndex: 502,perLevelIndex: 503, scale: 100, unit: "초" },
+				{ label: "비고", text: "상승량 최대 150", valueType: "text", color: "#2F5C8A" }
            ]
         },
         {
@@ -801,7 +818,8 @@ const skillTableConfig = {
                 { label: "지속시간", baseIndex: 191, perLevelIndex: 192, scale: 100, unit: "초" },
                 { label: "효과 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m" },
                 { label: "비고", text: "모든 타입의 펫에게 적용", valueType: "text" },
-                { label: "비고", text: "온/오프 스킬", valueType: "text" }
+                { label: "비고", text: "온/오프 스킬", valueType: "text" },
+				{ label: "비고", text: "반려동물 무적", valueType: "text", color: "#2F5C8A" }
            ]
         },
         {
@@ -817,7 +835,8 @@ const skillTableConfig = {
                 { label: "지속시간", baseIndex: 191, perLevelIndex: 192, scale: 100, unit: "초" },
                 { label: "효과 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m" },
                 { label: "비고", text: "모든 타입의 펫에게 적용", valueType: "text" },
-                { label: "비고", text: "온/오프 스킬", valueType: "text" }
+                { label: "비고", text: "온/오프 스킬", valueType: "text" },
+				{ label: "비고", text: "반려동물 무적", valueType: "text", color: "#2F5C8A" }
            ]
         },
         {
@@ -833,7 +852,8 @@ const skillTableConfig = {
                 { label: "지속시간", baseIndex: 191, perLevelIndex: 192, scale: 100, unit: "초" },
                 { label: "효과 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m" },
                 { label: "비고", text: "모든 타입의 펫에게 적용", valueType: "text" },
-                { label: "비고", text: "온/오프 스킬", valueType: "text" }
+                { label: "비고", text: "온/오프 스킬", valueType: "text" },
+				{ label: "비고", text: "반려동물 무적", valueType: "text", color: "#2F5C8A" }
            ]
         },
         {
@@ -848,7 +868,8 @@ const skillTableConfig = {
                 { label: "지속시간", baseIndex: 191, perLevelIndex: 192, scale: 100, unit: "초" },
                 { label: "효과 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m" },
                 { label: "비고", text: "모든 타입의 펫에게 적용", valueType: "text" },
-                { label: "비고", text: "온/오프 스킬", valueType: "text" }
+                { label: "비고", text: "온/오프 스킬", valueType: "text" },
+				{ label: "비고", text: "반려동물 무적", valueType: "text", color: "#2F5C8A" }
            ]
         },
         {
@@ -863,19 +884,37 @@ const skillTableConfig = {
                 { label: "지속시간", baseIndex: 191, perLevelIndex: 192, scale: 100, unit: "초" },
                 { label: "효과 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m" },
                 { label: "비고", text: "모든 타입의 펫에게 적용", valueType: "text" },
-                { label: "비고", text: "온/오프 스킬", valueType: "text" }
+                { label: "비고", text: "온/오프 스킬", valueType: "text" },
+				{ label: "비고", text: "반려동물 무적", valueType: "text", color: "#2F5C8A" }
            ]
         },
     ],
    11: [
+		{
+            skillIndex: 278,
+            displayName: "라이딩 독",
+            iconId: 279,
+			isNew: true,
+            rows: [
+                { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "집중력", baseIndex: 193, perLevelIndex: 194, scale: 100, unit: "%" },
+				{ label: "불 속성 저항 상승", baseIndex: 196, perLevelIndex: 197, scale: 100, unit: "%" },
+                { label: "이동속도 증가", baseIndex: 215, perLevelIndex: 216, scale: 100, unit: "%" },
+                { label: "쿨타임", text: "600초", valueType: "text", color: "#2F5C8A" }
+           ]
+        },
         {
             skillIndex: 281,
             displayName: "인시너레이트",
             iconId: 282,
+			isNew: true,
             rows: [
                 { label: "필요 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
-				{ label: "불 데미지", baseIndex: 143, perLevelIndex: 144, rangeWidthIndex: 145, valueType: "rangeText", scale: 100, combineWith: { baseIndex: 193, perLevelIndex: 194, rangeWidthIndex: 195, scale: 100 } },
-                { label: "효과 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m" },
+				{ label: "기존 불 데미지",csv:2, baseIndex: 143, perLevelIndex: 144, rangeWidthIndex: 145, valueType: "rangeText", scale: 100, combineWith: { baseIndex: 193, perLevelIndex: 194, rangeWidthIndex: 195, scale: 100 }, color: "#502828" },
+				{ label: "변경 불 데미지", baseIndex: 143, perLevelIndex: 144, rangeWidthIndex: 145, valueType: "rangeText", scale: 100, combineWith: { baseIndex: 193, perLevelIndex: 194, rangeWidthIndex: 195, scale: 100 }, color: "#2F5C8A" },
+                { label: "기존 효과 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m", csv:2, color: "#502828" },
+                { label: "변경 효과 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m", color: "#2F5C8A" },
                 { label: "비고", text: "1초당 3회 발동", valueType: "text" },
                 { label: "비고", text: "온/오프 스킬", valueType: "text" }
            ]
@@ -884,10 +923,12 @@ const skillTableConfig = {
             skillIndex: 288,
             displayName: "게일 펀치",
             iconId: 289,
+			isNew: true,
             rows: [
                 { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
 				{ label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
-				{ label: "바람 데미지", baseIndex: 157, perLevelIndex: 158, rangeWidthIndex2: 160, valueType: "rangeText2", scale: 100 },
+				{ label: "기존 바람 데미지", baseIndex: 157, perLevelIndex: 158, rangeWidthIndex: 160, valueType: "rangeText", scale: 100, combineWith: { baseIndex: 193, perLevelIndex: 194, rangeWidthIndex: 195, scale: 100 },csv:2 , color: "#502828" },
+				{ label: "변경 바람 데미지", baseIndex: 157, perLevelIndex: 158, rangeWidthIndex: 160, valueType: "rangeText", scale: 100, combineWith: { baseIndex: 193, perLevelIndex: 194, rangeWidthIndex: 195, scale: 100 }, color: "#2F5C8A" },
                 { label: "타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199, offset: 1 },
 				{ label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m" },
            ]
@@ -1025,12 +1066,12 @@ const skillTableConfig = {
             displayName: "바인드 블레이즈",
             iconId: 380,
             rows: [
-                { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100, color: "#502828" },
-                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100, color: "#502828" },
-                { label: "불 데미지", baseIndex: 193, perLevelIndex: 194, rangeWidthIndex: 195, valueType: "rangeText", scale: 100, color: "#502828" },
-                { label: "타격 범위", baseIndex: 191, perLevelIndex: 192, scale: 10000, unit: "m", color: "#502828" },
-				{ label: "불 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199, color: "#502828" },
-                { label: "비고", text: "자기 중심으로 스킬 발동", valueType: "text", color: "#502828" },
+                { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "불 데미지", baseIndex: 193, perLevelIndex: 194, rangeWidthIndex: 195, valueType: "rangeText", scale: 100 },
+                { label: "타격 범위", baseIndex: 191, perLevelIndex: 192, scale: 10000, unit: "m" },
+				{ label: "불 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199 },
+                { label: "비고", text: "자기 중심으로 스킬 발동", valueType: "text" },
            ]
         },
 		{
@@ -1038,16 +1079,16 @@ const skillTableConfig = {
             displayName: "모탈 클라우드",
             iconId: 390,
             rows: [
-                { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100, color: "#502828" },
-                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100, color: "#502828" },
-                { label: "대지 데미지", baseIndex: 164, perLevelIndex: 165, rangeWidthIndex2: 166, valueType: "rangeText2", scale: 100, color: "#502828" },
-                { label: "구름 지속시간", baseIndex: 191, scale: 100, unit: "초", color: "#502828" },
-				{ label: "독 지속시간", baseIndex: 213, scale: 100, unit: "초", color: "#502828" },
-				{ label: "한계 시간", baseIndex: 191, perLevelIndex: 192, maxIndex: 193, scale: 100, unit: "초", color: "#502828" },
-				{ label: "즉사 확률", baseIndex: 195, perLevelIndex: 196, maxIndex: 197, scale: 100, unit: "%", color: "#502828" },
-                { label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m", color: "#502828" },
-				{ label: "끌어당김 범위", baseIndex: 255, perLevelIndex: 256, scale: 10000, unit: "m", color: "#502828" },
-                { label: "비고", text: "자기 중심으로 스킬 발동", valueType: "text", color: "#502828" },
+                { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "대지 데미지", baseIndex: 164, perLevelIndex: 165, rangeWidthIndex2: 166, valueType: "rangeText2", scale: 100 },
+                { label: "구름 지속시간", baseIndex: 191, scale: 100, unit: "초" },
+				{ label: "독 지속시간", baseIndex: 213, scale: 100, unit: "초" },
+				{ label: "한계 시간", baseIndex: 191, perLevelIndex: 192, maxIndex: 193, scale: 100, unit: "초" },
+				{ label: "즉사 확률", baseIndex: 195, perLevelIndex: 196, maxIndex: 197, scale: 100, unit: "%" },
+                { label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m" },
+				{ label: "끌어당김 범위", baseIndex: 255, perLevelIndex: 256, scale: 10000, unit: "m" },
+                { label: "비고", text: "자기 중심으로 스킬 발동", valueType: "text" },
            ]
         },
     ],
@@ -1087,16 +1128,16 @@ const skillTableConfig = {
                 { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
                 { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
 				{ label: "데미지", baseIndex: 137, perLevelIndex: 138, scale: 100, unit: "%" },
-                { label: "추가 물리 데미지", baseIndex: 215, perLevelIndex: 216, rangeWidthIndex2: 217, valueType: "rangeText2", scale: 100, color: "#502828" },
-				{ label: "추가 물리 타격 횟수", baseIndex: 219, perLevelIndex: 220, scale: 100, maxIndex: 221, color: "#502828" },
-				{ label: "추가 바람 데미지", baseIndex: 237, perLevelIndex: 238, rangeWidthIndex2: 239, valueType: "rangeText2", scale: 100, color: "#502828" },
-				{ label: "추가 바람 타격 횟수", baseIndex: 241, perLevelIndex: 242, scale: 100, maxIndex: 243, color: "#502828" },
+                { label: "추가 물리 데미지", baseIndex: 215, perLevelIndex: 216, rangeWidthIndex2: 217, valueType: "rangeText2", scale: 100 },
+				{ label: "추가 물리 타격 횟수", baseIndex: 219, perLevelIndex: 220, scale: 100, maxIndex: 221 },
+				{ label: "추가 바람 데미지", baseIndex: 237, perLevelIndex: 238, rangeWidthIndex2: 239, valueType: "rangeText2", scale: 100 },
+				{ label: "추가 바람 타격 횟수", baseIndex: 241, perLevelIndex: 242, scale: 100, maxIndex: 243 },
 				{ label: "타격 횟수", baseIndex: 521, scale: 100, format: "perSecond" },
                 { label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m" },
                 { label: "지속시간", baseIndex: 502, scale: 100, unit: "초" },
-				{ label: "끌어당김 범위", baseIndex: 255, perLevelIndex: 256, scale: 10000, unit: "m", color: "#502828" },
+				{ label: "끌어당김 범위", baseIndex: 255, perLevelIndex: 256, scale: 10000, unit: "m" },
                 { label: "비고", text: "쿨타임 제거", valueType: "text" },
-				{ label: "비고", text: "지속시간 동안 이동 불가", valueType: "text", color: "#502828" },
+				{ label: "비고", text: "지속시간 동안 이동 불가", valueType: "text" },
            ]
         },
         {
