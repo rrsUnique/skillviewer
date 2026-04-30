@@ -963,7 +963,23 @@ const skillTableConfig = {
                 { label: "비고", text: "자기 중심으로 타격", valueType: "text" },
            ]
         },
+		{
+            skillIndex: 314,
+            displayName: "거대 탄환",
+            iconId: 315,
+			isNew: true,
+            rows: [
+                { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+				{ label: "기존 데미지", baseIndex: 137, perLevelIndex: 138, scale: 100, unit: "%", csv:2, color: "#502828" },
+                { label: "변경 데미지", baseIndex: 137, perLevelIndex: 138, scale: 100, unit: "%", color: "#2F5C8A" },
+                { label: "목표물 간 거리 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m" },
+                { label: "연쇄 횟수", baseIndex: 495, perLevelIndex: 496, scale: 100, maxIndex: 494, maxScale: false },
+                { label: "쿨타임", text: "60초", valueType: "text", color: "#2F5C8A" }
+           ]
+        }
     ],
+		
    13: [
         {
             skillIndex: 329,
@@ -1062,16 +1078,86 @@ const skillTableConfig = {
     ],
     15: [
         {
+            skillIndex: 378,
+            displayName: "차밍 필드",
+            iconId: 379,
+			isNew: true,
+            rows: [
+                { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+				{ label: "기존 데미지", baseIndex: 137, perLevelIndex: 138, scale: 100, unit: "%", csv:2, color: "#502828" },
+                { label: "변경 데미지", baseIndex: 137, perLevelIndex: 138, scale: 100, unit: "%", color: "#2F5C8A" },
+				{ label: "지속시간", baseIndex: 191, perLevelIndex: 192, scale: 100, unit: "초" },
+                { label: "대상 힘 증가", baseIndex: 193, perLevelIndex: 194, scale: 100 },
+				{ label: "대상 지식 증가", baseIndex: 195, perLevelIndex: 196, scale: 100 },
+                { label: "유혹 성공 확률", baseIndex: 189, perLevelIndex: 190, scale: 100, unit: "%" },
+				{ label: "기존 물리 타격 횟수", baseIndex: 219, perLevelIndex: 220, scale: 100, maxIndex: 221, csv:2, color: "#502828" },
+				{ label: "변경 물리 타격 횟수", baseIndex: 219, perLevelIndex: 220, scale: 100, maxIndex: 221, offset:1, color: "#2F5C8A" },
+                { label: "기존 타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m", csv:2, color: "#502828" },
+				{ label: "기존 타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m", color: "#2F5C8A" },
+           ]
+        },
+        {
             skillIndex: 379,
             displayName: "바인드 블레이즈",
             iconId: 380,
+			isNew: true,
             rows: [
                 { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
                 { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
                 { label: "불 데미지", baseIndex: 193, perLevelIndex: 194, rangeWidthIndex: 195, valueType: "rangeText", scale: 100 },
-                { label: "타격 범위", baseIndex: 191, perLevelIndex: 192, scale: 10000, unit: "m" },
+                { label: "타격 범위", baseIndex: 426, scale: 100, format: "range" },
 				{ label: "불 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199 },
+                { label: "추가 불 타격 횟수", baseIndex: 219, perLevelIndex: 220, scale: 100, maxIndex: 221, color: "#2F5C8A" },
+				{ label: "유혹 지속시간", baseIndex: 235, perLevelIndex: 236, scale: 100, unit: "초", color: "#2F5C8A" },
+                { label: "대상 힘 증가", baseIndex: 237, perLevelIndex: 238, scale: 100, color: "#2F5C8A" },
+				{ label: "대상 지식 증가", baseIndex: 239, perLevelIndex: 240, scale: 100, color: "#2F5C8A" },
+                { label: "유혹 성공 확률", baseIndex: 233, perLevelIndex: 234, scale: 100, unit: "%", color: "#2F5C8A" },
                 { label: "비고", text: "자기 중심으로 스킬 발동", valueType: "text" },
+           ]
+        },
+        {
+            skillIndex: 380,
+            displayName: "인페르노바",
+            iconId: 381,
+			isNew: true,
+            rows: [
+                { label: "필요 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "초당 소비 CP", baseIndex: 215, perLevelIndex: 216, scale: 100, color: "#2F5C8A" },
+                { label: "공격력 증가", baseIndex: 193, perLevelIndex: 194, maxIndex: 195, scale: 100, unit: "%", color: "#2F5C8A" },
+                { label: "비고", text: "버프 스킬로 변경 1초갱신 3초 지속", valueType: "text", color: "#2F5C8A" },
+           ]
+        },
+        {
+            skillIndex: 382,
+            displayName: "웜 바이트",
+            iconId: 383,
+			isNew: true,
+            rows: [
+                { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "기존 어둠 데미지", baseIndex: 178, perLevelIndex: 179, scale: 100, csv:2, color: "#502828"  },  
+                { label: "변경 어둠 데미지", baseIndex: 178, perLevelIndex: 179, scale: 100, color: "#2F5C8A"  },  
+				{ label: "웜 체력", baseIndex: 193, perLevelIndex: 194, scale: 100 },
+                { label: "웜 방어력", baseIndex: 195, perLevelIndex: 196, scale: 100 },
+				{ label: "웜 지속시간", baseIndex: 191, perLevelIndex: 192, scale: 100, unit: "초" },
+                { label: "대상 상태이상 저항 감소", baseIndex: 233, perLevelIndex: 234, scale: 100, unit: "%", color: "#2F5C8A" },
+				{ label: "유혹 지속시간", baseIndex: 257, perLevelIndex: 258, scale: 100, unit: "초", color: "#2F5C8A" },
+                { label: "대상 힘 증가", baseIndex: 259, perLevelIndex: 260, scale: 100, color: "#2F5C8A" },
+				{ label: "대상 지식 증가", baseIndex: 261, perLevelIndex: 262, scale: 100, color: "#2F5C8A" },
+                { label: "유혹 성공 확률", baseIndex: 255, perLevelIndex: 256, scale: 100, unit: "%", color: "#2F5C8A" },
+                { label: "비고", text: "자기 중심으로 스킬 발동", valueType: "text" },
+           ]
+        },
+        {
+            skillIndex: 384,
+            displayName: "아라크노포비아",
+            iconId: 385,
+			isNew: true,
+            rows: [
+                { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "기존 어둠 데미지", baseIndex: 178, perLevelIndex: 179, scale: 100, csv:2, color: "#502828" },  
+                { label: "변경 어둠 데미지", baseIndex: 178, perLevelIndex: 179, scale: 100, color: "#2F5C8A" },  
+				{ label: "타격 범위", baseIndex: 426, scale: 100, format: "range" }
            ]
         },
 		{
@@ -1089,6 +1175,64 @@ const skillTableConfig = {
                 { label: "타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m" },
 				{ label: "끌어당김 범위", baseIndex: 255, perLevelIndex: 256, scale: 10000, unit: "m" },
                 { label: "비고", text: "자기 중심으로 스킬 발동", valueType: "text" },
+           ]
+        },
+		{
+            skillIndex: 391,
+            displayName: "블랙 블루스",
+            iconId: 392,
+			isNew: true,
+            rows: [
+                { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "기존 데미지", baseIndex: 137, perLevelIndex: 138, scale: 100, unit: "%", csv:2, color: "#502828" },
+                { label: "변경 데미지", baseIndex: 137, perLevelIndex: 138, scale: 100, unit: "%", color: "#2F5C8A" },
+                { label: "기존 추가 데미지", baseIndex: 130, perLevelIndex: 131, scale: 100, maxIndex: 132, unit: "%", csv:2, color: "#502828" },
+                { label: "변경 추가 데미지", baseIndex: 130, perLevelIndex: 131, scale: 100, maxIndex: 132, unit: "%", color: "#2F5C8A" },
+                { label: "기존 물리 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199, csv:2, color: "#502828" },
+                { label: "변경 물리 타격 횟수", baseIndex: 197, perLevelIndex: 198, scale: 100, maxIndex: 199, offset: 1, color: "#2F5C8A" },
+                { label: "사정거리", baseIndex: 419, scale: 100, unit:"m" }
+           ]
+        },
+		{
+            skillIndex: 392,
+            displayName: "데들리 나이트메어",
+            iconId: 393,
+			isNew: true,
+            rows: [
+                { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "기존 어둠 데미지", baseIndex: 215, perLevelIndex: 216, scale: 100, csv:2, color: "#502828" },
+                { label: "변경 어둠 데미지", baseIndex: 215, perLevelIndex: 216, scale: 100, maxIndex: 217, maxScale: false, color: "#2F5C8A" },
+                { label: "기존 타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m", csv:2, color: "#502828" },
+				{ label: "변경 타격 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m", color: "#2F5C8A" },
+				{ label: "어둠 타격 횟수", baseIndex: 263, perLevelIndex: 264, scale: 100, maxIndex:265, offset:1, color: "#2F5C8A" },
+                { label: "수면 확률", baseIndex: 189, perLevelIndex: 190, scale: 100, unit: "%" },
+                { label: "지속 시간", baseIndex: 191, perLevelIndex: 192, scale: 100, unit: "초" },
+                { label: "쿨타임", baseIndex: 98, scale: 100, unit: "초" },
+                { label: "비고", text: "시전 중에는 플레이어가 이동할 수 없습니다. 또한 적의 공격을 무시하지만, 콜(이동 스킬)이나 강제 이동 시 스킬이 취소될 수 있습니다.", valueType: "text" },
+                { label: "비고", text: "수면 상태에서의 데미지는 상태이상 판정이므로, 데미지 상한(캡)의 영향을 받지 않습니다.", valueType: "text" }
+           ]
+        },
+		{
+            skillIndex: 393,
+            displayName: "진혼곡",
+            iconId: 394,
+			isNew: true,
+            rows: [
+                { label: "소모 CP", baseIndex: 19, perLevelIndex: 20, scale: 100 },
+                { label: "획득 CP", baseIndex: 21, perLevelIndex: 22, scale: 100 },
+                { label: "발동 확률", text: "?%", valueType: "text" },
+				{ label: "회복률 저하 발동 확률", baseIndex: 189, perLevelIndex: 190, scale: 100, unit:"%" },
+				{ label: "기존 회복률 저하", baseIndex: 193, perLevelIndex: 194, maxIndex:195, scale: 100, csv:2, color: "#502828" },
+				{ label: "변경 회복률 저하", baseIndex: 193, perLevelIndex: 194, maxIndex:195, scale: 100, color: "#2F5C8A" },
+                { label: "부활 방해 확률", text: "100%", valueType: "text" },
+				{ label: "기존 지속시간", baseIndex: 191, scale: 100, csv:2, color: "#502828" },
+				{ label: "변경 지속시간", baseIndex: 191, scale: 100, color: "#2F5C8A" },
+				{ label: "갱신간격", baseIndex: 109, scale: 100 },
+                { label: "효과 범위", baseIndex: 424, perLevelIndex: 425, scale: 10000, unit: "m" },
+                { label: "비고", text: "어스 힐이나 HP 흡수 옵션과 같은 즉시 회복 스킬을 무력화한다.", valueType: "text" },
+                { label: "비고", text: "또한 저주 저항으로 회복량 감소 수치에 대해서만 저항이 가능하다.", valueType: "text" },
            ]
         },
     ],
